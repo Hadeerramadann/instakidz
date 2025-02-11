@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "f3ca0575-6513-4a56-a4a8-6baf251e1c8f",
+		"name": "instakidz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15523036"
+	},
+	"item": [
+		{
+			"name": "general",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "cummerata.delaney@instakidz.com",
+									"description": "bruen.shemar@instakidz.com||admin@instakidz.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get report attentance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{teacher6}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/general/attendance/report?class_id=1&start_date=2025-02-11&end_date=2025-02-11",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"general",
+								"attendance",
+								"report"
+							],
+							"query": [
+								{
+									"key": "class_id",
+									"value": "1"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-02-11"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-02-11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get class attendance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{teacher6}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/general/attendance/class/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"general",
+								"attendance",
+								"class",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "student",
+					"item": [
+						{
+							"name": "Add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{admin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "fahd",
+											"type": "text"
+										},
+										{
+											"key": "class_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/admin/student/add",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"student",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all students",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{admin}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/admin/student/list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"student",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "teacher",
+			"item": [
+				{
+					"name": "mark attendance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{teacher1}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "student_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "class_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "present",
+									"description": "present||absent||late",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/teacher/attendance/mark",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"teacher",
+								"attendance",
+								"mark"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/test",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
