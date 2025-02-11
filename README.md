@@ -19,7 +19,7 @@ Follow these steps to install the project:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-repo/attendance-system.git
+   git clone https://github.com/Hadeerramadann/instakidz.git
    cd attendance-system
    ```
 
